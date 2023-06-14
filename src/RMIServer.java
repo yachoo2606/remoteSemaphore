@@ -5,7 +5,7 @@ import java.rmi.registry.Registry;
 public class RMIServer {
     public static void main(String[] args){
         try{
-            RemoteSemaphore semaphore = new RemoteSemaphoreImpl(0);
+            RemoteSemaphore semaphore = new RemoteSemaphoreImpl(5);
             Registry registry = LocateRegistry.createRegistry(1099);
             registry.rebind("RemoteSemaphore", semaphore);
             System.out.println("RemoteSemaphore is waits for connect...");
